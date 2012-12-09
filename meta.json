@@ -1,0 +1,65 @@
+<?php
+
+	// The script for the meta.json endpoint
+
+	require_once("framework.php");
+	require_once("config.php");
+
+	header("Content-Type: application/json");
+
+	$config['publication_api_version'] = '1.0';
+
+	// This line auto-detects whether or not you have put code in the /configure/index.php endpoint.
+	if (filesize('configure/index.php') <= 334) $config['external_configuration'] = 'false'; else $config['external_configuration'] = 'true';
+
+	echo '{'."\n";
+	echo '	"owner_email": "', $config['owner_email'], '",'."\n";
+	echo '	"publication_api_version": "', $config['publication_api_version'], '",'."\n";
+	echo '	"name": "', $config['name'], '",'."\n";
+	echo '	"description": "', $config['description'], '",'."\n";
+	echo '	"delivered_on": "', $config['delivered_on'], '",'."\n";
+	echo '	"external_configuration": "', $config['external_configuration'], '",'."\n";
+	echo '	"send_timezone_info": "', $config['send_timezone_info'], '",'."\n";
+	echo '	"send_delivery_count": "', $config['send_delivery_count'], '",'."\n";
+
+	if (isset($config['config']) && !empty($config['config'])) {
+		echo ' 	"config": {'."\n";
+		echo '		"fields": ['."\n";
+		
+		$numOptions = count($config['config']);
+		$iOptions = 0;
+
+		foreach ($config['config'] as $thing) {
+			echo '			{'."\n";
+			echo '			"type": "', $thing['type'], '",'."\n";
+			echo '			"name": "', $thing['name'], '",'."\n";
+			echo '			"label": "', $thing['label'], '"';
+			if ($thing['type'] == 'select') {
+				echo ','."\n";
+				echo '			"options": ['."\n";
+				
+				$end = end($thing['options']);
+				$end = each($thing['options']);
+				reset($thing['options']);
+				foreach ($thing['options'] as $label => $name) {
+					echo '				["', $label, '", "', $name, '"]';
+					if ($label !== $end['key']) echo ",";
+					echo "\n";
+				}
+
+				echo '			]'."\n";
+				
+			} else echo "\n";
+			
+			
+			
+			if (++$iOptions == $numOptions) echo '			}'."\n"; else echo '			},'."\n";
+		}
+		
+		echo '	]'."\n";
+		echo '	}'."\n";
+	}
+
+	echo '}'."\n";
+
+?>

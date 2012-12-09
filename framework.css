@@ -1,0 +1,11 @@
+/*
+	This is the framework.css, which contains the defaults defined by
+	http://remote.bergcloud.com/developers/style_guide/
+
+	Please put your own styles in style.css
+
+*/
+
+* { margin: 0; padding: 0; }
+
+#wrap { width: 384px; }

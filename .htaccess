@@ -1,0 +1,3 @@
+# Needed to make PHP process meta.json
+
+AddType application/x-httpd-php .json
