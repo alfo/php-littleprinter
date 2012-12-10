@@ -3,6 +3,8 @@ PHP-LittlePrinter
 
 PHP-LP is an open source framework designed to make writing a publication for the Little Printer by BERG as easy as possible.
 
+Note: the only thing new file you have to create is a `.png` icon, which should be monochrome and 55px by 55px.
+
 What this framework does for you
 --------------------------------
 
