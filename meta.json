@@ -10,7 +10,8 @@
 	$config['publication_api_version'] = '1.0';
 
 	// This line auto-detects whether or not you have put code in the /configure/index.php endpoint.
-	if (filesize('configure/index.php') <= 334) $config['external_configuration'] = 'false'; else $config['external_configuration'] = 'true';
+	if ($config['external_configuration'] == 'default' || $config['external_configuration'] == '')
+			if (filesize('configure/index.php') <= 334) $config['external_configuration'] = 'false'; else $config['external_configuration'] = 'true';
 
 	echo '{'."\n";
 	echo '	"owner_email": "', $config['owner_email'], '",'."\n";

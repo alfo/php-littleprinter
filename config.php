@@ -12,6 +12,12 @@
 	$config['send_timezone_info'] = 'false'; 					// Send an ISO 8601 timestamp to the /edition/ endpoint?
 	$config['send_delivery_count'] = 'false'; 					// Send the number of deliveries so far?
 
+	$config['external_configuration'] = 'default';
+	
+	// 'default' - choose automatically
+	// 'true' - override true
+	// 'false' - override false 
+
 	/*	What options should the user have when subscribing to your publication?
 	  	If no configuration is required, comment out the next section 
 
