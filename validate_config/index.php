@@ -28,12 +28,12 @@
 
 						if (isset($input['maxlength'])) {
 							$length = strlen($post[$input['name']]);
-							if ($length > $input['maxlength']) $errors[] = array(4, $input['name'], $input['maxlength']);
+							if ($input['maxlength'] > $length) $errors[] = array(4, $input['name'], $input['maxlength']);
 						}
 
 						if (isset($input['minlength'])) {
 							$length = strlen($post[$input['name']]);
-							if ($length < $input['minlength']) $errors[] = array(5, $input['name'], $input['minlength']);
+							if ($length > $input['minlength']) $errors[] = array(5, $input['name'], $input['minlength']);
 						}
 
 
