@@ -104,3 +104,17 @@
 		require_once("../footer.php");
 
 	}
+
+	/*
+
+	function setTimezone($iso) {
+		//2012-12-11T13:37:13+00:00
+		
+		$iso = substr($iso, 19);
+
+		$original = new DateTime("now");
+		$timezoneName = timezone_name_from_abbr("", 3*3600, false);
+		$modified = $original->setTimezone(new DateTimezone($timezoneName));
+	}
+
+	*/
