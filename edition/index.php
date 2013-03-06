@@ -16,6 +16,7 @@
 	//	4: different every time
 
 	eTag(1);
+	charset();
 
 	// This must be be the first line of code on this page, otherwise you'll get a 'headers not sent' error
 

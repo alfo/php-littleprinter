@@ -83,6 +83,10 @@
 		header("ETag: ".$md5);
 	}
 
+	function charset() {
+		header("Content-Type: text/html; charset=utf-8");
+	}
+
 	function makeSample($params) {
 
 		$_GET = $params;
