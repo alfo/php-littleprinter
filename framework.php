@@ -66,7 +66,7 @@
 				break;
 			
 			case 2:
-				$date = date("w");
+				$date = date("W");
 				break;
 
 			case 3:
