@@ -66,11 +66,11 @@
 				break;
 			
 			case 2:
-				$date = date("W");
+				$date = date("YW");
 				break;
 
 			case 3:
-				$date = date("m");
+				$date = date("Ym");
 				break;
 
 			case 4:
