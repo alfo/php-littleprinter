@@ -45,7 +45,7 @@
 		// If you do not need to use these, remove the comma from the end of the previous line
 
 		'maxlength' => 50,
-		'minlenth' => 10,
+		'minlength' => 10,
 
 		// Want to use a regex to check the input? Put the regex here:
 		'regex' => "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*(\+[a-z0-9-]+)?@[a-z0-9-]+(\.[a-z0-9-]+)*$/i" // This one checks whether or not it is a valid email
