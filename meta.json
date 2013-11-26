@@ -21,10 +21,10 @@
 	echo '	"delivered_on": "', $config['delivered_on'], '",'."\n";
 	echo '	"external_configuration": "', $config['external_configuration'], '",'."\n";
 	echo '	"send_timezone_info": "', $config['send_timezone_info'], '",'."\n";
-	echo '	"send_delivery_count": "', $config['send_delivery_count'], '",'."\n";
+	echo '	"send_delivery_count": "', $config['send_delivery_count'], '"';
 
 	if (isset($config['config']) && !empty($config['config'])) {
-		echo ' 	"config": {'."\n";
+		echo ",\n", '"config": {'."\n";
 		echo '		"fields": ['."\n";
 		
 		$numOptions = count($config['config']);
